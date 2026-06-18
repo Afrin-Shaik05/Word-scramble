@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wizard's Word Scramble</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="stars" id="stars"></div>
+
+  <div class="container">
+
+    <h1>✦ The Wizard's Spellbook ✦</h1>
+    <p class="subtitle">Unscramble the ancient runes to cast each spell</p>
+
+    <!-- Mana / Stats -->
+    <div class="scoreboard">
+      <div class="stat">
+        <span class="stat-icon">🔮</span>
+        <span class="stat-value" id="score">0</span>
+        <span class="stat-label">Mana</span>
+      </div>
+      <div class="stat">
+        <span class="stat-icon">📜</span>
+        <span class="stat-value" id="attempts">0</span>
+        <span class="stat-label">Scrolls Read</span>
+      </div>
+      <div class="stat">
+        <span class="stat-icon">🔥</span>
+        <span class="stat-value" id="streak">0</span>
+        <span class="stat-label">Spell Streak</span>
+      </div>
+    </div>
+
+    <!-- Spellbook card -->
+    <div class="spellbook">
+      <div class="page-corner top-left"></div>
+      <div class="page-corner top-right"></div>
+
+      <p class="word-label">— Ancient Runes —</p>
+      <div class="scrambled-word" id="scrambled-word">------</div>
+      <p class="hint" id="hint-text">Whisper "reveal" for a clue...</p>
+
+      <div class="page-corner bottom-left"></div>
+      <div class="page-corner bottom-right"></div>
+    </div>
+
+    <!-- Input area -->
+    <div class="input-area">
+      <input
+        type="text"
+        id="player-input"
+        placeholder="Speak the true word..."
+        autocomplete="off"
+      />
+      <button id="check-btn">Cast ✦</button>
+    </div>
+
+    <!-- Feedback -->
+    <div class="feedback" id="feedback"></div>
+
+    <!-- Controls -->
+    <div class="buttons">
+      <button id="new-word-btn">📖 New Rune</button>
+      <button id="hint-btn">🔍 Reveal Clue</button>
+      <button id="give-up-btn">💀 Abandon Spell</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

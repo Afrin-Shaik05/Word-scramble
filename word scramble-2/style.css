@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=EB+Garamond:ital@0;1&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'EB Garamond', serif;
+  background: linear-gradient(180deg, #0d0a1f 0%, #1a1438 50%, #2a1f4d 100%);
+  color: #e8d9ff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* === Twinkling stars background === */
+.stars {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #ffe9a8;
+  border-radius: 50%;
+  animation: twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+/* === Main container === */
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.7rem;
+  color: #ffd86b;
+  text-shadow: 0 0 12px rgba(255, 216, 107, 0.5);
+  margin-bottom: 0.3rem;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  font-style: italic;
+  color: #b9a8e8;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+/* === Scoreboard === */
+.scoreboard {
+  display: flex;
+  justify-content: space-around;
+  background: rgba(43, 30, 77, 0.6);
+  border: 1px solid #6b4fa8;
+  border-radius: 14px;
+  padding: 1rem 0.5rem;
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(4px);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.stat-icon {
+  font-size: 1.2rem;
+}
+
+.stat-value {
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffd86b;
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  color: #b9a8e8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* === Spellbook card (the "page") === */
+.spellbook {
+  position: relative;
+  background: radial-gradient(ellipse at top, #2e1f57 0%, #1a1438 100%);
+  border: 2px solid #6b4fa8;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 30px rgba(107, 79, 168, 0.4), inset 0 0 40px rgba(107, 79, 168, 0.15);
+}
+
+.page-corner {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ffd86b;
+  opacity: 0.6;
+}
+
+.top-left     { top: 10px; left: 10px; border-right: none; border-bottom: none; }
+.top-right    { top: 10px; right: 10px; border-left: none; border-bottom: none; }
+.bottom-left  { bottom: 10px; left: 10px; border-right: none; border-top: none; }
+.bottom-right { bottom: 10px; right: 10px; border-left: none; border-top: none; }
+
+.word-label {
+  font-style: italic;
+  font-size: 0.85rem;
+  color: #b9a8e8;
+  margin-bottom: 0.75rem;
+  letter-spacing: 2px;
+}
+
+.scrambled-word {
+  font-family: 'Cinzel', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 10px;
+  color: #ffe9a8;
+  text-shadow: 0 0 16px rgba(255, 233, 168, 0.6);
+  margin-bottom: 0.75rem;
+}
+
+.hint {
+  font-style: italic;
+  font-size: 0.85rem;
+  color: #9b87c4;
+}
+
+/* === Input area === */
+.input-area {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+
+input {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #6b4fa8;
+  background: rgba(43, 30, 77, 0.6);
+  color: #ffe9a8;
+  font-family: 'EB Garamond', serif;
+  font-size: 1.05rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input::placeholder {
+  color: #7a6a9c;
+}
+
+input:focus {
+  border-color: #ffd86b;
+  box-shadow: 0 0 12px rgba(255, 216, 107, 0.3);
+}
+
+button {
+  padding: 0.7rem 1.2rem;
+  border-radius: 10px;
+  border: 1px solid #ffd86b;
+  background: linear-gradient(180deg, #6b4fa8, #4a2f8a);
+  color: #ffe9a8;
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+button:hover {
+  background: linear-gradient(180deg, #7d5fc0, #5c3fa0);
+  box-shadow: 0 0 14px rgba(255, 216, 107, 0.4);
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+/* === Feedback === */
+.feedback {
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.65rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  min-height: 42px;
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+}
+
+.feedback.correct {
+  background: rgba(82, 183, 110, 0.18);
+  color: #7be0a0;
+  border: 1px solid #52b76e;
+}
+
+.feedback.wrong {
+  background: rgba(214, 80, 80, 0.18);
+  color: #ff9b9b;
+  border: 1px solid #d65050;
+}
+
+/* === Control buttons === */
+.buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.buttons button {
+  flex: 1;
+  font-size: 0.75rem;
+  background: rgba(43, 30, 77, 0.6);
+  border: 1px solid #6b4fa8;
+  color: #b9a8e8;
+}
+
+.buttons button:hover {
+  background: rgba(107, 79, 168, 0.4);
+  color: #ffe9a8;
+}
